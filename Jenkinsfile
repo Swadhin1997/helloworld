@@ -1,6 +1,6 @@
-//def project_folder = "/var/lib/jenkins/workspace/dontnetappweb/hello-world-api/bin/Debug/netcoreapp2.0"
+def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/Debug/netcoreapp2.0"
 def JOB_NAME = 'DotnetSample'
-def backup_folder = '/var/lib/jenkins/workspace/webbackups'
+def backup_folder = '/var/lib/jenkins/workspace/webbackup'
 
 pipeline {
 agent any
@@ -32,7 +32,7 @@ agent any
             steps {
                 script {
                     echo "Copying project folder to backup folder"
-                   // sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}_${currentBuild.number}"
+                    sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}_${currentBuild.number}"
                 }
             }
         }

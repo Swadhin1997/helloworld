@@ -2,7 +2,7 @@ def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/D
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
 def now = 'new Date()'
-def dateRelease = 'now.format("yyyy-MM-dd". TimeZone.getTimeZone('UTC')'
+def dateRelease = 'now.format("yyyy-MM-dd")'
      
 pipeline {
 agent any

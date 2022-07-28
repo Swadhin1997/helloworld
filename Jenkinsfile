@@ -1,8 +1,7 @@
 def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/Debug/netcoreapp2.0"
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
-def date = 'new Date()'
-    sdf = 'new SimpleDateFormat("MM/dd/yyyy")''
+def date = 'new Date() SimpleDateFormat("MM/dd/yyyy")'
     
      
 pipeline {

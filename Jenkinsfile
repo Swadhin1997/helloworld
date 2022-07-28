@@ -1,8 +1,7 @@
 def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/Debug/netcoreapp2.0"
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
-def now = 'new Date()'
-def dateRelease = 'now.format("yyyy-MM-dd")'
+def dateRelease = 'currentDate'
      
 pipeline {
 agent any

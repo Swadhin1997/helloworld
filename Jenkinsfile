@@ -2,9 +2,14 @@ def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/D
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
 
-    
 pipeline {
 agent any
+
+     environment {
+        def timestamp = sh(script: "echo `date +%d%m%Y%H%M`", returnStdout: true).trim()
+        //def timestamp = sh(script: "echo `date +%s`", returnStdout: true).trim()
+    }
+
      options {
         timestamps()
     }
@@ -33,7 +38,8 @@ agent any
             steps {
                 script {
                     echo "Copying project folder to backup folder"
-                    sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}_${currentBuild.number}"
+                    sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}${currentBuild.number}_$timestamp"
+                    echo "Current timestamp :: $timestamp"
                 }
             }
         }

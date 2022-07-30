@@ -6,7 +6,7 @@ pipeline {
 agent any
 
      environment {
-        def timestamp = sh(script: "echo `date +%d%m%Y%H%M`", returnStdout: true).trim()
+        def timestamp = sh(script: "echo `date +%d-%m-%Y-%H-%M`", returnStdout: true).trim()
         //def timestamp = sh(script: "echo `date +%s`", returnStdout: true).trim()
     }
 

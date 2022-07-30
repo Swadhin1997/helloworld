@@ -1,9 +1,8 @@
 def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/Debug/netcoreapp2.0"
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
-def date = 'new Date() SimpleDateFormat("MM/dd/yyyy")'
+
     
-     
 pipeline {
 agent any
      options {
@@ -34,7 +33,7 @@ agent any
             steps {
                 script {
                     echo "Copying project folder to backup folder"
-                    sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}_${currentBuild.number}_${date}"
+                    sh "cp -r ${project_folder} ${backup_folder}/${JOB_NAME}_${currentBuild.number}"
                 }
             }
         }

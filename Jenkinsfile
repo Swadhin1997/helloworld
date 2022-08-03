@@ -46,7 +46,7 @@ agent any
         stage ('copy proj to servers') {
             steps {
                 script{
-                    sh "sudo scp -r ${project_folder} 	76f28307-d3fa-4d23-b3ae-3b56ab7421a6:C:/Users/Administrator/Downloads"
+                    sh "sudo scp -r ${project_folder} 	76f28307-d3fa-4d23-b3ae-3b56ab7421a6:C:/Users/Administrator/Downloads/dotnetbuild"
                 }
             }
         }

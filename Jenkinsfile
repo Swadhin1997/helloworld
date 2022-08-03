@@ -43,6 +43,13 @@ agent any
                 }
             }
         }
+        stage ('copy proj to servers') {
+            steps {
+                script{
+                    sh "scp -r ${project_folder} root@172.31.33.157:root/jenkins/dotnet_backup"
+                }
+            }
+        }
         stage('Quality Analysis') {
             parallel {
                 // run Sonar Scan and Integration tests in parallel.

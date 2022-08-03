@@ -46,8 +46,8 @@ agent any
         stage ('copy proj to servers') {
             steps {
                 script{
-                     sh "sudo whoami"
-                    ///sh "sudo scp -rS ${project_folder} f9d9d149-bc11-4e6c-bb4b-d261fdea843b:C:/Users/Administrator/Downloads/dotnetbuild"
+                     sh "whoami"
+                    sh "scp -r ${project_folder} f9d9d149-bc11-4e6c-bb4b-d261fdea843b:C:/Users/Administrator/Downloads/dotnetbuild"
                 }
             }
         }

@@ -46,7 +46,7 @@ agent any
         stage ('copy proj to servers') {
             steps {
                 script{
-                    sh "sudo scp ${project_folder} ec2-user@172.31.44.177:/home/ec2-user/jenkins/dotnet_backup"
+                    sh "sudo scp -s ${project_folder} ec2-user@172.31.44.177:/home/ec2-user/jenkins/dotnet_backup"
                 }
             }
         }

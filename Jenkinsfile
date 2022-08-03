@@ -47,7 +47,7 @@ agent any
             steps {
                 script{
                      sh "whoami"
-                    sh "scp -r ${project_folder} f9d9d149-bc11-4e6c-bb4b-d261fdea843b:C:/Users/Administrator/Downloads/dotnetbuild"
+                    sh "scp -r ${project_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
                 }
             }
         }

@@ -47,7 +47,10 @@ agent any
             steps {
                 script{
                      sh "whoami"
-                    sh "echo y | pscp -r -pw '(xxTTjIIxxUfgaumXy!k)bDQCKb&b@iY' ${backup_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
+                     withCredentials([string(credentialsId: 'windows_passwd', variable: 'serverpasswd')]) {
+                    sh "echo y | pscp -r -pw '${serverpasswd}' ${backup_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
+}
+                    
                 }
             }
         }

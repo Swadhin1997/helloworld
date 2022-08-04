@@ -1,6 +1,7 @@
 def project_folder = "/var/lib/jenkins/workspace/dotnetweb/hello-world-api/bin/Debug/netcoreapp2.0"
 def JOB_NAME = 'DotnetSample'
 def backup_folder = '/var/lib/jenkins/workspace/webbackup'
+def server_folder = "${backup_folder}/${JOB_NAME}${currentBuild.number}_$timestamp"
 
 pipeline {
 agent any
@@ -48,7 +49,7 @@ agent any
                 script{
                      sh "whoami"
                      withCredentials([string(credentialsId: 'windows_passwd', variable: 'serverpasswd')]) {
-                    sh "echo y | pscp -r -pw '${serverpasswd}' ${backup_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
+                    sh "echo y | pscp -r -pw '${serverpasswd}' ${server_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
 }
                     
                 }

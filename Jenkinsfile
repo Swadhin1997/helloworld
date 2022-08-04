@@ -47,7 +47,7 @@ agent any
             steps {
                 script{
                      sh "whoami"
-                    sh "echo y | pscp -pw '(xxTTjIIxxUfgaumXy!k)bDQCKb&b@iY' ${project_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
+                    sh "echo y | pscp -r -pw '(xxTTjIIxxUfgaumXy!k)bDQCKb&b@iY' ${project_folder} Administrator@13.234.48.79:C:/Users/Administrator/Downloads/dotnetbuild"
                 }
             }
         }
